@@ -1,0 +1,41 @@
+[package]
+name = "fleece"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+description = "FLEECE: a keyboard-friendly digital logic editor with TOML documents and clean diagram export"
+license = "MIT"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+egui = { version = "0.37", default-features = false }
+egui-wgpu = { version = "0.37", default-features = false }
+winit = "0.30"
+serde = { version = "1", features = ["derive"] }
+toml = "1.1"
+tiny-skia = "0.11"
+ab_glyph = "0.2"
+web-time = "1.1"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+wgpu = { version = "30", default-features = false, features = ["std", "vulkan", "gles", "metal", "dx12", "wgsl"] }
+pollster = "0.4"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wgpu = { version = "30", default-features = false, features = ["std", "webgpu", "webgl", "wgsl"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["Window", "Document", "HtmlCanvasElement", "Navigator", "console"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.dev]
+debug = 1
+
+[profile.release]
+lto = "thin"
+strip = true

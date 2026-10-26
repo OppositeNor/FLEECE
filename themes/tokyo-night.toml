@@ -1,0 +1,32 @@
+# Tokyo Night (Night variant), adapted to this editor's theme format.
+# Palette: https://github.com/folke/tokyonight.nvim/blob/main/extras/windows_terminal/tokyonight_night.json
+theme_version = 1
+name = "Tokyo Night"
+base = "dark"
+
+[ui]
+panel = "#16161e"
+window = "#1a1b26"
+input = "#15161e"
+button = "#24283b"
+hover = "#292e42"
+active = "#3d59a1"
+text = "#c0caf5"
+muted = "#9aa5ce"
+border = "#414868"
+accent = "#7aa2f7"
+selection = "#283457"
+warning = "#e0af68"
+error = "#f7768e"
+
+[canvas]
+background = "#1a1b26"
+grid = "#292e42"
+label = "#c0caf5"
+gate_fill = "#24283b"
+gate_outline = "#a9b1d6"
+selection = "#7aa2f7"
+
+[metrics]
+font_size = 14.0
+corner_radius = 5

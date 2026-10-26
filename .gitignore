@@ -1,0 +1,23 @@
+# Rust build output (keep Cargo.lock for reproducible application builds).
+/target/
+
+# Temporary and editor backup files.
+*.tmp
+*.swp
+*.swo
+*~
+/.idea/
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+
+# Local credentials and tool settings.
+/.aws/
+/.codex/
+.env
+.env.*
+!.env.example
+
+# Generated browser bundle.
+/web/pkg/

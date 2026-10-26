@@ -1,0 +1,8 @@
+theme_version = 1
+name = "Original dark"
+base = "dark"
+# Omitted colors and metrics inherit the dark editor defaults.
+
+[canvas]
+gate_fill = "#202a3a"
+gate_outline = "#b8c7dd"

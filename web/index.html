@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202a3a">
+  <title>FLEECE</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #151b25; color: #b8c7dd; font: 16px system-ui, sans-serif; }
+    #fleece-canvas { display: block; width: 100%; height: 100%; outline: none; touch-action: none; }
+    #loading { position: absolute; inset: 25% 10% auto; text-align: center; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <canvas id="fleece-canvas" tabindex="0" aria-label="FLEECE logic circuit and finite state machine editor"></canvas>
+  <div id="loading" role="status">Loading FLEECE…</div>
+  <noscript>FLEECE needs JavaScript and WebAssembly enabled.</noscript>
+  <script type="module">
+    try {
+      const { default: init } = await import('./pkg/fleece.js');
+      await init();
+    }
+    catch (error) {
+      document.getElementById('loading').textContent = `FLEECE could not start: ${error.message}`;
+      document.documentElement.dataset.fleece = 'error';
+      console.error(error);
+    }
+  </script>
+</body>
+</html>

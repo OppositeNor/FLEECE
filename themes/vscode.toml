@@ -1,0 +1,32 @@
+# VS Code Dark Modern, adapted to the editor's controls and circuit canvas.
+# Palette: https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_modern.json
+theme_version = 1
+name = "VSCode"
+base = "dark"
+
+[ui]
+panel = "#181818"
+window = "#1f1f1f"
+input = "#313131"
+button = "#313131"
+hover = "#3c3c3c"
+active = "#0078d4"
+text = "#cccccc"
+muted = "#9d9d9d"
+border = "#2b2b2b"
+accent = "#0078d4"
+selection = "#264f78"
+warning = "#cca700"
+error = "#f85149"
+
+[canvas]
+background = "#1f1f1f"
+grid = "#2b2b2b"
+label = "#cccccc"
+gate_fill = "#2b2b2b"
+gate_outline = "#cccccc"
+selection = "#0078d4"
+
+[metrics]
+font_size = 14.0
+corner_radius = 4

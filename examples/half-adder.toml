@@ -1,0 +1,167 @@
+format_version = 1
+
+[circuit]
+title = "Half adder"
+
+[[circuit.nodes]]
+id = 1
+kind = "input"
+label = "A"
+inputs = 0
+outputs = 1
+
+[circuit.nodes.position]
+x = 60.0
+y = 80.0
+
+[[circuit.nodes]]
+id = 2
+kind = "input"
+label = "B"
+inputs = 0
+outputs = 1
+
+[circuit.nodes.position]
+x = 60.0
+y = 360.0
+
+[[circuit.nodes]]
+id = 3
+kind = "xor"
+label = "Sum logic"
+inputs = 2
+outputs = 1
+
+[circuit.nodes.position]
+x = 360.0
+y = 60.0
+
+[[circuit.nodes]]
+id = 4
+kind = "and"
+label = "Carry logic"
+inputs = 2
+outputs = 1
+
+[circuit.nodes.position]
+x = 360.0
+y = 260.0
+
+[[circuit.nodes]]
+id = 5
+kind = "output"
+label = "Sum"
+inputs = 1
+outputs = 0
+
+[circuit.nodes.position]
+x = 680.0
+y = 60.0
+
+[[circuit.nodes]]
+id = 6
+kind = "output"
+label = "Carry"
+inputs = 1
+outputs = 0
+
+[circuit.nodes.position]
+x = 680.0
+y = 260.0
+
+[[circuit.wires]]
+waypoints = []
+horizontal_first = true
+
+[circuit.wires.from]
+node = 1
+port = 0
+
+[circuit.wires.to]
+node = 3
+port = 0
+
+[[circuit.wires]]
+horizontal_first = true
+
+[circuit.wires.from]
+node = 2
+port = 0
+
+[circuit.wires.to]
+node = 3
+port = 1
+
+[[circuit.wires.waypoints]]
+x = 280.0
+y = 380.0
+
+[[circuit.wires.waypoints]]
+x = 280.0
+y = 120.0
+
+[[circuit.wires]]
+horizontal_first = true
+
+[circuit.wires.from]
+node = 1
+port = 0
+
+[circuit.wires.to]
+node = 4
+port = 0
+
+[[circuit.wires.waypoints]]
+x = 220.0
+y = 100.0
+
+[[circuit.wires.waypoints]]
+x = 220.0
+y = 280.0
+
+[[circuit.wires]]
+waypoints = []
+horizontal_first = true
+
+[circuit.wires.from]
+node = 2
+port = 0
+
+[circuit.wires.to]
+node = 4
+port = 1
+
+[[circuit.wires]]
+waypoints = []
+horizontal_first = true
+
+[circuit.wires.from]
+node = 3
+port = 0
+
+[circuit.wires.to]
+node = 5
+port = 0
+
+[[circuit.wires]]
+waypoints = []
+horizontal_first = true
+
+[circuit.wires.from]
+node = 4
+port = 0
+
+[circuit.wires.to]
+node = 6
+port = 0
+
+[editor]
+layout = "standard"
+zoom = 1.0
+grid = true
+snap = true
+theme = "original-dark"
+
+[editor.pan]
+x = 40.0
+y = 60.0

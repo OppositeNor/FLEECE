@@ -1,0 +1,61 @@
+format_version = 1
+
+[circuit]
+title = "Two-state controller"
+nodes = []
+wires = []
+
+[circuit.fsm]
+initial = 1
+
+[[circuit.fsm.states]]
+id = 1
+name = "Idle"
+output = "y = 0"
+accepting = false
+
+[circuit.fsm.states.position]
+x = 160.0
+y = 220.0
+
+[[circuit.fsm.states]]
+id = 2
+name = "Run"
+output = "y = 1"
+accepting = true
+
+[circuit.fsm.states.position]
+x = 460.0
+y = 220.0
+
+[[circuit.fsm.transitions]]
+id = 1
+from = 1
+to = 2
+condition = "start = 1"
+output = ""
+
+[[circuit.fsm.transitions]]
+id = 2
+from = 2
+to = 1
+condition = "stop = 1"
+output = ""
+
+[[circuit.fsm.transitions]]
+id = 3
+from = 1
+to = 1
+condition = "start = 0"
+output = ""
+
+[editor]
+layout = "standard"
+zoom = 1.0
+grid = true
+snap = true
+theme = "original-dark"
+
+[editor.pan]
+x = 40.0
+y = 60.0
