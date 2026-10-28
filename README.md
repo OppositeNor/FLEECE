@@ -2,6 +2,7 @@
 
 ![FLEECE logic circuit editor showing a half-adder circuit](media/fleece-editor.png)
 
+FLEECE (Finite Logical Editor for Electrical and Computer Engineering)
 A Rust editor for drawing digital logic circuits and finite state machines,
 available on desktop and in the browser.
 Create circuits visually or from the keyboard, save editable
@@ -370,7 +371,7 @@ On macOS, use **Command** in place of **Ctrl**.
 | Action | Control |
 | --- | --- |
 | Input / output | `I` / `O` |
-| AND / OR / NOT / XOR / buffer | `A` / `R` / `N` / `Shift+X` / `B` |
+| AND / OR / NOT / XOR / buffer | `A` / `R` / `N` / `X` / `B` |
 | NAND / NOR / XNOR | `Shift+A` / `Shift+R` / `Shift+E` |
 | Multiplexer / half adder / full adder / custom module | `M` / `H` / `Shift+H` / `U` |
 | Constant 1 / 0 | `1` / `0` |
@@ -391,7 +392,7 @@ On macOS, use **Command** in place of **Ctrl**.
 | Drag to pan | Drag anywhere in Drag mode (`D`); middle drag or `Space+drag` also works |
 | Zoom / fit entire circuit | `Ctrl+scroll` or pinch at the pointer / `F` |
 | Grid / change panel layout / arrange circuit | `G` / `L` / `Shift+L` |
-| Select all / duplicate / delete | `Ctrl+A` / `Ctrl+D` / `X` or `Delete` |
+| Select all / duplicate / delete | `Ctrl+A` / `Ctrl+D` / `Delete` or `Backspace` |
 | Cut / copy / paste blocks and internal wires | `Ctrl+X` / `Ctrl+C` / `Ctrl+V` |
 | Undo / redo | `Ctrl+Z` / `Ctrl+Shift+Z` or `Ctrl+Y` |
 | New / open / save / save as | `Ctrl+N` / `Ctrl+O` / `Ctrl+S` / `Ctrl+Shift+S` |

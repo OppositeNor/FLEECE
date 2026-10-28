@@ -240,7 +240,7 @@ impl Editor {
                     ("D", "Toggle Drag mode to pan anywhere"),
                     ("Drag empty canvas / Shift+drag", "Box select states / extend selection"),
                     ("Drag / arrow keys", "Move selected states"),
-                    ("Right-click / X / Delete", "Remove item / remove selection"),
+                    ("Right-click / Delete", "Remove item / remove selection"),
                     ("Ctrl+Z / Ctrl+Shift+Z", "Undo / redo"),
                     ("Ctrl+X / Ctrl+C / Ctrl+V / Ctrl+D", "Cut / copy / paste / duplicate selected states"),
                     ("Ctrl+scroll / pinch", "Zoom at the pointer"),
@@ -258,7 +258,7 @@ impl Editor {
         }
         const SHORTCUTS: &[(&str, &str)] = &[
             ("I / O", "Input / output"),
-            ("A / R / N / Shift+X / B", "AND / OR / NOT / XOR / buffer"),
+            ("A / R / N / X / B", "AND / OR / NOT / XOR / buffer"),
             ("Shift+A / Shift+R / Shift+E", "NAND / NOR / XNOR"),
             (
                 "M / H / Shift+H / U",
@@ -311,10 +311,7 @@ impl Editor {
             ("Middle drag / Space+drag", "Pan canvas"),
             ("Ctrl+scroll / F", "Zoom at pointer / fit circuit"),
             ("G / L / Shift+L", "Grid / cycle panels / arrange circuit"),
-            (
-                "Ctrl+A / Ctrl+D / X or Del",
-                "Select all / duplicate / delete",
-            ),
+            ("Ctrl+A / Ctrl+D / Del", "Select all / duplicate / delete"),
             (
                 "Ctrl+X / Ctrl+C / Ctrl+V",
                 "Cut / copy / paste blocks and internal wires",

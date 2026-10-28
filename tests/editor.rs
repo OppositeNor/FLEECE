@@ -2333,25 +2333,29 @@ fn double_click_opens_the_selected_file_and_preserves_unsaved_change_confirmatio
 }
 
 #[test]
-fn x_deletes_selection_shift_x_places_xor_and_text_fields_keep_x_typing() {
+fn x_places_xor_without_deleting_selection_and_text_fields_keep_x_typing() {
     let mut harness = Harness::new();
     harness.key(Key::I, Modifiers::NONE);
     harness.key(Key::Enter, Modifiers::NONE);
     let before = harness.editor.document.circuit.clone();
     harness.key(Key::X, Modifiers::NONE);
-    assert!(harness.editor.document.circuit.nodes.is_empty());
-    harness.key(Key::Z, Modifiers::COMMAND);
-    assert_eq!(harness.editor.document.circuit, before);
-    harness.key(Key::X, Modifiers::SHIFT);
-    assert_eq!(
-        harness.editor.document.circuit, before,
-        "Shift+X must not delete"
-    );
+    assert_eq!(harness.editor.document.circuit, before, "X must not delete");
     harness.key(Key::Enter, Modifiers::NONE);
     assert_eq!(
         harness.editor.document.circuit.nodes.last().unwrap().kind,
         Kind::Xor
     );
+    harness.key(Key::Escape, Modifiers::NONE);
+    let with_xor = harness.editor.document.circuit.clone();
+    let position = with_xor.nodes.last().unwrap().position;
+    harness.click(
+        Point::new(position.x + 50.0, position.y + 30.0),
+        Modifiers::NONE,
+    );
+    harness.key(Key::Delete, Modifiers::NONE);
+    assert_eq!(harness.editor.document.circuit.nodes.len(), 1);
+    harness.key(Key::Z, Modifiers::COMMAND);
+    assert_eq!(harness.editor.document.circuit, with_xor);
     harness.key(Key::E, Modifiers::SHIFT);
     harness.key(Key::Enter, Modifiers::NONE);
     let node = harness.editor.document.circuit.nodes.last().unwrap().id;
@@ -2370,7 +2374,7 @@ fn x_deletes_selection_shift_x_places_xor_and_text_fields_keep_x_typing() {
 }
 
 #[test]
-fn x_deletes_selected_fsm_states_and_undo_restores_transitions() {
+fn x_preserves_fsm_states_and_delete_is_undoable() {
     let mut harness = Harness::new();
     harness.editor.new_fsm();
     harness.key(Key::S, Modifiers::NONE);
@@ -2387,6 +2391,8 @@ fn x_deletes_selected_fsm_states_and_undo_restores_transitions() {
         .unwrap();
     let before = harness.editor.document.circuit.clone();
     harness.key(Key::X, Modifiers::NONE);
+    assert_eq!(harness.editor.document.circuit, before);
+    harness.key(Key::Delete, Modifiers::NONE);
     let fsm = harness.editor.document.circuit.fsm.as_ref().unwrap();
     assert_eq!(fsm.states.len(), 1);
     assert!(fsm.transitions.is_empty());

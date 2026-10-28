@@ -295,7 +295,7 @@ clicks do not create an undo entry.
 Regular Select mode (V or Esc) uses left-click to select nodes, pins, or wires,
 node dragging to move, and empty-canvas dragging to box-select. Shift extends
 selection. D toggles Drag mode, where primary dragging anywhere pans; V/Esc selects.
-X deletes the current selection (Delete/Backspace also work); Shift+X places XOR
+Delete/Backspace delete the current selection; X places XOR
 and Shift+E places XNOR. Text fields keep normal X typing.
 Shift+D enters repeated D-flip-flop placement. Middle drag and Space+drag also pan. Regular mode never starts wiring or disconnects
 pins. Wire mode (W or the components panel) routes all left-clicks into wiring: choose
@@ -576,8 +576,7 @@ status/error messages; selectable labels do not request TextEdit keyboard focus.
 Diagram clipboard handling must not overwrite selected text with node TOML.
 
 
-Cut uses Ctrl/Command+X or a native egui Cut event; X without Command still deletes
-and Shift+X places XOR. Serialize the selected nodes/states and internal connections
+Cut uses Ctrl/Command+X or a native egui Cut event; X without Command places XOR. Serialize the selected nodes/states and internal connections
 before deleting anything. Failed serialization and empty selections leave the
 clipboard/document intact. Cut and paste are separate undo actions; text widgets
 and selected labels retain normal clipboard behavior. Uncopied routing controls

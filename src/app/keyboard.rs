@@ -90,7 +90,6 @@ const CANVAS_BINDINGS: &[Binding] = &[
     Binding::plain(Key::V, Action::Select),
     Binding::plain(Key::D, Action::Drag).shifted(false),
     Binding::plain(Key::W, Action::Wire),
-    Binding::plain(Key::X, Action::Delete).shifted(false),
     Binding::plain(Key::Delete, Action::Delete),
     Binding::plain(Key::Backspace, Action::Delete),
     Binding::plain(Key::F, Action::Fit),

@@ -76,7 +76,7 @@ impl ComponentGroup {
 pub struct ComponentDefinition {
     /// Plain display name used by menus and initial component labels.
     pub name: &'static str,
-    /// Keyboard placement shortcut, such as `Shift+X`, or an empty string for joints.
+    /// Keyboard placement shortcut, such as `Shift+A`, or an empty string for joints.
     pub shortcut: &'static str,
     /// Library category and broad symbol capability group.
     pub group: ComponentGroup,
@@ -142,7 +142,7 @@ impl Kind {
             Self::Not => ComponentDefinition::new("NOT", "N", Gates, 1, 1),
             Self::Nand => ComponentDefinition::new("NAND", "Shift+A", Gates, 2, 1).variable(),
             Self::Nor => ComponentDefinition::new("NOR", "Shift+R", Gates, 2, 1).variable(),
-            Self::Xor => ComponentDefinition::new("XOR", "Shift+X", Gates, 2, 1),
+            Self::Xor => ComponentDefinition::new("XOR", "X", Gates, 2, 1),
             Self::Xnor => ComponentDefinition::new("XNOR", "Shift+E", Gates, 2, 1).variable(),
             Self::Buffer => ComponentDefinition::new("Buffer", "B", Gates, 1, 1),
             Self::High => ComponentDefinition::new("Constant 1", "1", Sources, 0, 1),
